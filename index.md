@@ -9,14 +9,10 @@ Decatur Makers, Inc.
 
 # Documents #
 
-[Articles of Incorporation][aoi]  
-[Bylaws][b]  
-[Board Policy][bp]  
-[Executive Rules][er]  
-[Member Rules][mr]  
+[Articles of Incorporation]({{ site.baseurl }}/aoi/index.html)  
+[Bylaws]({{ site.baseurl }}/bylaws/index.html)  
+[Board]({{ site.baseurl }}/board/index.html)  
+[Executive]({{ site.baseurl }}/executive/index.html)  
+[Member]({{ site.baseurl }}/member/index.html)  
 
-[aoi]: {{ site.baseurl }}/aoi/index.html
-[b]: {{ site.baseurl }}/bylaws/index.html
-[bp]: {{ site.baseurl }}/bp/index.html
-[er]: {{ site.baseurl }}/er/index.html
-[mr]: {{ site.baseurl }}/mr/index.html
+
