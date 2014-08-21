@@ -10,14 +10,15 @@ group:
 {% assign titlecase = page.group | join ' ' %}{% include titlecase %}
 {% assign url_date_node = page %}{% include url_date %}
 {% assign path_popped = page.url %}{% include path_popped %}
+{% assign agenda_date = url_date %}
 # {{ titlecase }}
-## {{ url_date | date: "%A %B %-d, %Y" }}
+## {{ agenda_date | date: "%A %B %-d, %Y" }}
 
 1.  Call to order
 1.  Roll Call
 1.  Agenda: revisions and approval
 1.  Minutes
-    1. [07/23/2014]({{ site.baseurl }}/board-meeting/2014-07-23-Minutes.html)
+{% include agenda_minutes %}
 1.  Reports
 {% assign agenda_item = 'report' %}{% include agenda_item_list %}
 1.  Consent Items

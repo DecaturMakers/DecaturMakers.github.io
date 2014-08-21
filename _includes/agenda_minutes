@@ -1,13 +1,46 @@
-{% comment %}<!--
+{% capture agenda_dates %}{% comment %}<!--
 agenda minutes include is a listing helper.
 Usage:
-  {% assign agenda_group = 'board|meeting' %}
+  {% assign agenda_date = url_date %}
   {% include agenda_minutes_list %}
 -->{% endcomment %}
-{% assign path_popped = page.url %}
-{% include path_popped %}
-{% assign url_date_node = page %}
-{% include url_date %}
-
-test1: {{ url_date_node.url }}
-test1: {{ url_date }}
+{% assign url_date_node = page %}{% include url_date %}
+{% assign agenda_date = url_date %}
+{% for node in site.pages %}
+  {% if node.group == page.group %}
+    {% assign url_date_node = node %}{% include url_date %}|{{ url_date }}
+  {% endif %}
+{% endfor %}
+{% endcapture %}{% capture previous_agenda_date %}
+{% assign agenda_dates = agenda_dates | replace: ' ', '' | strip_newlines | split: '|' | sort %}
+{% assign agenda_prev = '' %}
+{% for ie in agenda_dates offset:1 %}
+  {% assign idx_prev = forloop.index | minus: 1 %}
+  {% if forloop.index > 1 %}
+    {% if agenda_date == ie %}
+      {% assign previous_agenda_date = agenda_prev %}
+    {% endif %}
+    {% assign agenda_prev = ie %}
+  {% endif %}
+{% endfor %}
+{% assign agenda_dates = nil %}
+{% assign agenda_prev = nil %}
+{% assign idx_prev = nil %}
+{% assign url_date_node = nil %}
+{% assign agenda_prev = nil %}
+{{ previous_agenda_date }}
+{% endcapture %}{% capture minutes_list %}
+{% assign previous_agenda_date = previous_agenda_date | replace: ' ', '' | strip_newlines %}
+{% assign group =  page.group | join: '' | replace: 'agenda','minutes' %}
+{% for node in site.pages %}
+  {% assign node_group = node.group | join: '' %}
+  {% if node_group == group %}
+  {% assign url_date_node = node %}{% include url_date %}
+    {% if url_date == previous_agenda_date %}
+      {% capture minutes_list %}[{{ url_date | date: "%m/%d/%Y" }}]({{ site.baseurl }}{{ node.url }}){% endcapture %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+{% assign group = nil %}
+{{ minutes_list }}
+{% endcapture %}{% assign minutes_list = minutes_list | replace: ' ','' | strip_newlines %}    1. {{ minutes_list }}

@@ -26,4 +26,4 @@ Usage:
 {% if url_date == nil %}{% assign date = page.date %}{% endif %}
 {% if url_date == nil %}{% assign date = '1970-01-01' %}{% endif %}
 {% assign url_elem = nil %}
-{% endcapture %}{% assign no_output=nil %}
+{% endcapture %}{% assign url_date = url_date | replace ' ','' | strip_newlines %}{% assign no_output=nil %}
