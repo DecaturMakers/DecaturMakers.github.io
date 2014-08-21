@@ -1,0 +1,29 @@
+{% comment %}<!--
+
+url_date include is helper which sets the date variable to:
+
+1.  The last path element in url which looks like a date
+2.  page.date
+3.  1970-01-01.
+
+Usage:
+  # page.url = '/fubar/2014-0827/docname.html'
+  {% assign url = page.url %}
+  {% include url_date %}  
+  date: {{ url_date }}
+
+-->{% endcomment %}{% capture no_output %}
+{% assign url_elem = url | split: '/' %}
+{% for ue in url_elem offset:1 %}
+  {% if ue.size == 10 %}
+    {% assign date_elem = ue | split: '-' %}
+    {% if date_elem.size == 3 and date_elem[0].size == 4 and date_elem[1].size == 2 and date_elem[2].size == 2 and  date_elem[0] | plus: 0 > 0 and date_elem[1] | plus: 0 > 0 | date_elem[2] | plus: 0 > 0 %}
+      {% assign url_date = ue %}
+    {% endif %}
+  {% endif %} 
+  {% assign date_elem = nil %}
+{% endfor %}
+{% if url_date == nil %}{% assign date = page.date %}{% endif %}
+{% if url_date == nil %}{% assign date = '1970-01-01' %}{% endif %}
+{% assign url_elem = nil %}
+{% endcapture %}{% assign no_output=nil %}

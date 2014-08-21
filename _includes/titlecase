@@ -1,0 +1,13 @@
+{% capture no_output %}{% comment %}<!--
+titlecase is a helper which replaces the text in the var titlecase leading uppercase.
+
+Usage:
+  {% assign titlecase = 'foo bar baz' %}  
+  {% include titlecase %}                 
+  {{ titlecase }}
+
+Output:
+  Foo Bar Baz
+-->{% endcomment %}
+{% assign titlecase = titlecase | split: ' ' %}
+{% capture titlecase %}{% for e in titlecase %}{% if forloop.first == false %} {% endif %}{{ e | capitalize }}{% endfor %}{% endcapture %}{% endcapture %}{% assign no_output=nil %}

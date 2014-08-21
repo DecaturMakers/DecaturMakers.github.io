@@ -1,0 +1,14 @@
+{% capture no_output %}{% comment %}<!--
+path_popped is a helper which removes the last path element from a string.
+
+Usage:
+  {% assign path_popped = '/foo/bar/baz' %}  
+  {% include path_popped %}                 
+  {{ path_popped }}
+
+Output:
+  /foo/bar
+-->{% endcomment %}
+{% assign path_popped = path_popped | split: '/' %}
+{% capture path_popped %}{% for e in path_popped offset:1 %}{% unless forloop.last %}/{{ e }}{% endunless %}{% endfor %}{% endcapture %}
+{% endcapture %}{% assign no_output=nil %}

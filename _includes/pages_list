@@ -1,0 +1,22 @@
+{% comment %}<!--
+pages_list include is a listing helper.
+
+Usage:
+  {% assign pages_list = site.pages  %}  # set pages_list variable to list of pages or posts
+  {% assign group = [list of groups] %}  # (Optional) set group to filter based on list of groups
+  {% include pages_list %}               # include the pages_list helper
+  	
+  Grouping is mainly helpful for non-post pages.
+-->{% endcomment %}
+{% if site.pages_list.provider == "custom" %}
+  {% include custom/pages_list %}
+{% else %}
+  {% for node in pages_list | sort: page.url %}
+    {% if node.title != null and group == node.group %}
+      {% assign url = node.url %}
+      {% include url_date %}
+[{% for g in node.group %}{{ g | capitalize }} {% endfor %} {{ date | date: "%A %B %-d %Y" }}]({{ site.baseurl }}{{ node.url }})    
+    {% endif %}
+    {% assign date = nil %}
+  {% endfor %}
+{% endif %}

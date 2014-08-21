@@ -1,0 +1,7 @@
+{% capture agenda_item_sort %}{% comment %}<!--
+agenda item list include is a listing helper.
+Usage:
+  {% assign agenda_item = 'report' %}
+  {% include agenda_reports_list %}
+-->{% endcomment %}{% assign path_popped = page.url %}{% include path_popped %}{% assign parent_path = path_popped %}{% for node in site.pages %}{% assign path_popped = node.url %}{% include path_popped %}{% if path_popped == parent_path and node.url != page.url and node.group contains agenda_item %}{% assign priority = node.priority %}{% if priority == nil %}{% assign priority = 0 %}{% endif %}{% assign titlecase = node.title %}{% include titlecase %}{% if forloop.first == false %}|{% endif %}{{ priority }}:{{ titlecase }}:{{ site.baseurl }}{{ node.url }}{% endif %}{% assign path_popped = nil %}{% endfor %}{% endcapture %}{% assign agenda_list = agenda_item_sort | strip_newlines | split: '|' | sort %}{% capture agenda_list %}{% for item_elem in agenda_list offset:1 %}{% assign item_elem = item_elem | strip_newlines %}{% assign ie = item_elem | split: ':' %}    1. [{{ ie[1] }}]({{ ie[2] }})
+{% endfor %}{% endcapture %}{{ agenda_list }}{% assign agenda_list = nil %}{% assign agenda_item_sort = nil %}

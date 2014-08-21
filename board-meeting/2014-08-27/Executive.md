@@ -1,12 +1,17 @@
 ---
 layout: post
-date: 2014-08-27 08:30:00 -0500
-title: Report - Communications and Fundraising
+title: Executive
+group:
+  - board
+  - meeting
+  - report
+priority: 1
 ---
 
-# {{ page.title }}
-
-## {{ page.date | date: "%A %B %-d, %Y" }}
+{% assign titlecase = page.group | join ' ' %}{% include titlecase %}
+{% assign url = page.url %}{% include url_date %}
+# {{ page.title | capitalize }} {{ titlecase }}
+## {{ url_date | date: "%A %B %-d, %Y" }}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis scelerisque viverra. Integer a libero eu sem condimentum volutpat at non sem. Pellentesque sed tempus nulla. In sem lectus, scelerisque id pretium non, interdum nec turpis. Morbi nec velit vitae justo ultrices malesuada in nec tellus. Etiam in aliquam metus. Maecenas suscipit varius rutrum. Vivamus id magna vitae ante cursus fermentum id in erat. Fusce vel ullamcorper nunc. Aenean convallis sem at eleifend pharetra. Cras quis iaculis massa. Quisque ligula arcu, scelerisque sit amet diam sed, vehicula cursus odio. Nunc semper bibendum ante vel posuere. Nam vehicula fermentum dui eget sagittis. Suspendisse potenti.
 
