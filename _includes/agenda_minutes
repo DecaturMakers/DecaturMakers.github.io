@@ -1,0 +1,13 @@
+{% comment %}<!--
+agenda minutes include is a listing helper.
+Usage:
+  {% assign agenda_group = 'board|meeting' %}
+  {% include agenda_minutes_list %}
+-->{% endcomment %}
+{% assign path_popped = page.url %}
+{% include path_popped %}
+{% assign url_date_node = page %}
+{% include url_date %}
+
+test1: {{ url_date_node.url }}
+test1: {{ url_date }}

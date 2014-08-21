@@ -8,7 +8,7 @@ group:
 ---
 
 {% assign titlecase = page.group | join ' ' %}{% include titlecase %}
-{% assign url = page.url %}{% include url_date %}
+{% assign url_date_node = page %}{% include url_date %}
 {% assign path_popped = page.url %}{% include path_popped %}
 # {{ titlecase }}
 ## {{ url_date | date: "%A %B %-d, %Y" }}

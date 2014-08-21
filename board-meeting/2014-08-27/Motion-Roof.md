@@ -9,7 +9,7 @@ priority: 1
 ---
 
 {% assign titlecase = page.group | join ' ' %}{% include titlecase %}
-{% assign url = page.url %}{% include url_date %}
+{% assign url_date_node = page %}{% include url_date %}
 # {{ titlecase }} {{ page.title | capitalize }}
 ## {{ url_date | date: "%A %B %-d, %Y" }}
 

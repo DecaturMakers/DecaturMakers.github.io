@@ -8,12 +8,12 @@ url_date include is helper which sets the date variable to:
 
 Usage:
   # page.url = '/fubar/2014-0827/docname.html'
-  {% assign url = page.url %}
+  {% assign url_date_node = page %}
   {% include url_date %}  
   date: {{ url_date }}
 
 -->{% endcomment %}{% capture no_output %}
-{% assign url_elem = url | split: '/' %}
+{% assign url_elem = url_date_node.url | split: '/' %}
 {% for ue in url_elem offset:1 %}
   {% if ue.size == 10 %}
     {% assign date_elem = ue | split: '-' %}
