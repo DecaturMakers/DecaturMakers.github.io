@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Executive
+title: Activities
 group:
   - board
   - meeting
   - report
-priority: 1
+priority: 3
 ---
 
 {% assign titlecase = page.group | join ' ' %}{% include titlecase %}
@@ -13,10 +13,10 @@ priority: 1
 # {{ page.title | capitalize }} {{ titlecase }}
 ## {{ url_date | date: "%A %B %-d, %Y" }}
 
-* Membership vote still not sent.
-* FCCD
-    * Working agreeement
-    * calendar integration
-* Bylaws
-* Require commitee work?
-* FIRST Robotics use of space this fall
+
+* Decatur Book Festival (Labor Day)
+* Little Bus of Stories
+* Atlanta Maker Faire (SOMA cube, power wheels, Rubens tube)
+* Fund Power wheels teams?
+* Membership/MF meetings 2nd and 4th Wednesdays continue
+* National Night Out at DHA
