@@ -17,7 +17,7 @@ Action recommended by Garrett Goebel
 
 Summary: The purpose of adopting these policies to provide just enough of a policy framework to allow adoption of the *B.GP.6.2 Conflict of Interest* policy provided by Marc Wisniewski in order to comply with 501(c)3 requirements.
 
-The policies which follow are largely drawn from *Reinventing Your Board* by John and Miriam Carver with influence from prior board policy drafts, the (UUA Governance Manual)[http://www.uua.org/uuagovernance/manual/limits/index.shtml], and with an emphasis on the subset related to Governance Process.
+The policies which follow are largely drawn from *Reinventing Your Board* by John and Miriam Carver with influence from prior board policy drafts, the [UUA Governance Manual](http://www.uua.org/uuagovernance/manual/limits/index.shtml), and with an emphasis on the subset related to Governance Process.
 
 ### B.E.0 - Global Ends
 
