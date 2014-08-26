@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Roof Approve $21,800 Expenditure
+title: Move Approval to increase Expenditures on Roof from $15K to $21,800
 group:
   - board
   - meeting
@@ -9,9 +9,8 @@ priority: 1
 ---
 
 {% assign titlecase = page.group | join ' ' %}{% include titlecase %}
-# {{ titlecase }} {{ page.title | capitalize }}
-
-Move approve for $21,800 expenditures to repair/replace roof
+# {{ titlecase }}
+## {{ page.title | capitalize }}
 
 Action recommended by facilities chair Greg Coleson.
 
