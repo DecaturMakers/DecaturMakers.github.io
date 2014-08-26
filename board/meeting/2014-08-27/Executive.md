@@ -13,6 +13,8 @@ priority: 1
 # {{ page.title | capitalize }} {{ titlecase }}
 ## {{ url_date | date: "%A %B %-d, %Y" }}
 
+* Membership Report
+    * FB: 441, G: 129, MU: 179, MC: 535 
 * Membership vote still not sent.
 * FCCD
     * Working agreeement

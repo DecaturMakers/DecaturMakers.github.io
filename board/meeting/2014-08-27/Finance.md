@@ -13,8 +13,6 @@ priority: 2
 # {{ page.title | capitalize }} {{ titlecase }}
 ## {{ url_date | date: "%A %B %-d, %Y" }}
 
-* Membership Report
-    * FB: 441, G: 129, MU: 179, MC: 535 
 * 501(c)3 status
 * Finance committee has met: Marc W., Todd Ohlandt, Caleb Lloyd 
 * Insurance policy purchased including D&O
